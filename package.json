@@ -1,0 +1,35 @@
+{
+  "name": "three.phenomenon",
+  "version": "1.0.0",
+  "description": "A 900b wrapper around three.js built for high-performance WebGL experiences.",
+  "main": "dist/three.phenomenon.mjs",
+  "unpkg": "dist/three.phenomenon.umd.js",
+  "scripts": {
+    "start": "http-server demo --silent & $npm_execpath run watch",
+    "watch": "microbundle watch --format umd --entry demo/src/index.js --output demo/dist/bundle.js",
+    "build": "microbundle --name Phenomenon --format es,umd --sourcemap false",
+    "prepare": "$npm_execpath run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaneenige/three.phenomenon.git"
+  },
+  "author": {
+    "name": "Colin van Eenige",
+    "email": "cvaneenige@gmail.com",
+    "url": "https://use-the-platform.com"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "keywords": [
+    "webgl",
+    "instances",
+    "particles"
+  ],
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "microbundle": "^0.9.0"
+  }
+}
