@@ -23,6 +23,9 @@ class Phenomenon {
 
     // Set callback to modify our shaders
     material.onBeforeCompile = shader => {
+      // Reference shader for debugging
+      mesh.shader = shader;
+
       // Combine the uniforms
       Object.assign(shader.uniforms, uniforms);
 
