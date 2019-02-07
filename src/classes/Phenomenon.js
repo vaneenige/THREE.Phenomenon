@@ -10,7 +10,7 @@ class Phenomenon {
    */
   constructor(settings) {
     // Assign settings to variables
-    const { material, uniforms, vertex, castShadow = false } = settings;
+    const { material, uniforms, vertex, castShadow } = settings;
 
     // Create the custom geometry
     const geometry = new Geometry(settings);

@@ -10,23 +10,20 @@ class Geometry extends THREE.BufferGeometry {
     const { geometry, multiplier, attributes } = settings;
 
     const vertices = geometry.vertices.length;
-    const indices = geometry.faces.length * 3;
+    const indexes = geometry.faces.length * 3;
 
     // Create array to put face coordinates in
-    const bufferIncides = [];
+    const bufferIndexes = geometry.faces.map(face => [face.a, face.b, face.c]);
 
-    // Loop trough baseGeometry faces and add them to indices
-    geometry.faces.map(face => bufferIncides.push(face.a, face.b, face.c));
-
-    // Create array with length of multiplier times indices
-    const indexBuffer = new Uint32Array(multiplier * indices);
+    // Create array with length of multiplier times indexes
+    const indexBuffer = new Uint32Array(multiplier * indexes);
 
     // Loop over the multiplier
     for (let i = 0; i < multiplier; i += 1) {
-      // Loop over the indices of the baseGeometry
-      for (let j = 0; j < indices; j += 1) {
-        // Repeat over the indices and add them to the buffer
-        indexBuffer[i * indices + j] = bufferIncides[j] + i * vertices;
+      // Loop over the indexes of the baseGeometry
+      for (let j = 0; j < indexes; j += 1) {
+        // Repeat over the indexes and add them to the buffer
+        indexBuffer[i * indexes + j] = bufferIndexes[j] + i * vertices;
       }
     }
 
@@ -57,13 +54,13 @@ class Geometry extends THREE.BufferGeometry {
       const bufferArray = new Float32Array(multiplier * vertices * attributes[i].size);
       // Create a buffer attribute where the data will be stored in
       const bufferAttribute = new THREE.BufferAttribute(bufferArray, attributes[i].size);
-      // Add the attirubte by it's name
+      // Add the attribute by it's name
       this.addAttribute(attributes[i].name, bufferAttribute);
       // Loop over the multiplier
       for (let j = 0; j < multiplier; j += 1) {
         // Get data from the attribute function for every instance
         const data = attributes[i].data(j, multiplier);
-        // Calculate offset based on vertices and attibute size
+        // Calculate offset based on vertices and attribute size
         offset = j * vertices * bufferAttribute.itemSize;
         // Loop over the vertices of the instance
         for (let k = 0; k < vertices; k += 1) {
