@@ -3,8 +3,8 @@ import { getArrayWithNoise } from './utils';
 function createInstance() {
   const duration = 0.7;
 
-  // const geometry = new THREE.IcosahedronGeometry(1, 3);
   const geometry = new THREE.TorusGeometry(2, 0.5, 32, 32);
+
   const multiplier = 100;
 
   const material = new THREE.MeshPhongMaterial({
@@ -29,12 +29,12 @@ function createInstance() {
     },
     {
       name: 'aControlPointTwo',
-      data: () => getArrayWithNoise([0, 0, 0], 10),
+      data: () => getArrayWithNoise([0, 0, 0], 20),
       size: 3,
     },
     {
       name: 'aPositionEnd',
-      data: () => getArrayWithNoise([0, 0, 0], 10),
+      data: () => getArrayWithNoise([0, 0, 0], 20),
       size: 3,
     },
     {
