@@ -1,4 +1,17 @@
-function base(sceneColor) {
+function base() {
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+  });
+
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  renderer.setClearColor(0x212121, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(1);
+
+  document.querySelector('body').appendChild(renderer.domElement);
+
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(
@@ -17,7 +30,7 @@ function base(sceneColor) {
   const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(1000, 1000),
     new THREE.MeshPhongMaterial({
-      emissive: sceneColor,
+      emissive: '#F694C1',
     })
   );
   plane.receiveShadow = true;
@@ -25,7 +38,7 @@ function base(sceneColor) {
   plane.rotation.x = Math.PI * -0.5;
   scene.add(plane);
 
-  const light = new THREE.SpotLight(0xffffff, 3, 80, Math.PI * 0.25, 1, 2);
+  const light = new THREE.SpotLight(0xffffff, 2, 80, Math.PI * 0.25, 1, 2);
   light.position.set(0, 40, 0);
   light.castShadow = true;
   light.shadow.mapSize.width = 1024;
@@ -35,7 +48,7 @@ function base(sceneColor) {
 
   scene.add(light);
 
-  return { scene, camera };
+  return { renderer, scene, camera };
 }
 
 export default base;
