@@ -1,7 +1,7 @@
 {
   "name": "three.phenomenon",
   "version": "1.0.0",
-  "description": "A 900b wrapper around three.js built for high-performance WebGL experiences.",
+  "description": "A tiny wrapper around three.js built for high-performance WebGL experiences.",
   "main": "dist/three.phenomenon.mjs",
   "unpkg": "dist/three.phenomenon.umd.js",
   "scripts": {

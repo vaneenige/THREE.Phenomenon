@@ -6,11 +6,12 @@
 [![license](https://img.shields.io/npm/l/three.phenomenon.svg)](https://github.com/vaneenige/three.phenomenon/blob/master/LICENSE)
 [![dependencies](https://img.shields.io/badge/dependencies-three.js-ff69b4.svg)](https://github.com/mrdoob/three.js/)
 
-THREE.Phenomenon is a 900b wrapper around <a href="https://threejs.org/">three.js</a> built for high-performance WebGL experiences.
+THREE.Phenomenon is a tiny wrapper around <a href="https://threejs.org/">three.js</a> built for high-performance WebGL experiences.
 
 With it's simple API a mesh can be created that contains multiple instances of a geometry combined with a material. With access to the vertex shader, attributes per instance and uniforms this mesh can be transformed in any way possible (and on the GPU).
 
 #### Features:
+- Below 1kb in size (gzip)
 - Custom instanced geometries
 - Attributes for every instance
 - Support for default materials
@@ -37,6 +38,8 @@ Phenomenon({ ... });
 
 Returns an instance of Phenomenon.
 
+> The instance provides access to the mesh (with the compiled vertex and fragment shader) and uniforms.
+
 #### options.attributes
 Type: `Array` <br/>
 
@@ -56,6 +59,11 @@ Variables used in the program that can be adjusted on the fly. These are accessi
 Type: `String` <br/>
 
 The vertex shader of the program which will calculate the position of every instance. This will automatically get merged with the shaders that's created based on the provided geometry.
+
+#### options.fragment
+Type: `Array` <br/>
+
+The fragment parameter is optional and can be used to modify specific parts of the provided material's fragment shader. For example: Give every instance a unique color or manually use its position for calculations.
 
 #### options.geometry
 Type: `THREE.Geometry` <br/>

@@ -10,7 +10,7 @@ class Phenomenon {
    */
   constructor(settings) {
     // Assign settings to variables
-    const { material, uniforms, vertex, castShadow } = settings;
+    const { material, uniforms, vertex, fragment = [], castShadow } = settings;
 
     // Create the custom geometry
     const geometry = new Geometry(settings);
@@ -44,6 +44,10 @@ class Phenomenon {
         '#include <begin_vertex>',
         main.replace('gl_Position =', 'vec3 transformed =')
       );
+
+      for (let i = 0; i < fragment.length; i += 1) {
+        shader.fragmentShader = shader.fragmentShader.replace(fragment[i][0], fragment[i][1]);
+      }
 
       // Hack to randomize function
       material.onBeforeCompile = `${material.onBeforeCompile
