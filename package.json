@@ -30,6 +30,6 @@
   ],
   "devDependencies": {
     "http-server": "^0.11.1",
-    "microbundle": "^0.9.0"
+    "microbundle": "^0.11.0"
   }
 }
