@@ -15,7 +15,7 @@ With it's simple API a mesh can be created that contains multiple instances of a
 - Custom instanced geometries
 - Attributes for every instance
 - Support for default materials
-- Compatible with three.js <a href="https://github.com/mrdoob/three.js/releases/tag/r101">r101</a>
+- Compatible with three.js <a href="https://github.com/mrdoob/three.js/releases/tag/r102">r102</a>
 
 ## Install
 ```
