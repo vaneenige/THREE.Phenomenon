@@ -3,7 +3,7 @@
 
 [![npm version](https://img.shields.io/npm/v/three.phenomenon.svg)](https://www.npmjs.com/package/three.phenomenon)
 [![gzip size](http://img.badgesize.io/https://unpkg.com/three.phenomenon/dist/three.phenomenon.mjs?compression=gzip)](https://unpkg.com/three.phenomenon)
-[![license](https://img.shields.io/npm/l/three.phenomenon.svg)](https://github.com/vaneenige/three.phenomenon/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/vaneenige/three.phenomenon/blob/master/LICENSE)
 [![dependencies](https://img.shields.io/badge/dependencies-three.js-ff69b4.svg)](https://github.com/mrdoob/three.js/)
 
 THREE.Phenomenon is a tiny wrapper around <a href="https://threejs.org/">three.js</a> built for high-performance WebGL experiences.
