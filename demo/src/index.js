@@ -8,9 +8,19 @@ const { mesh, uniforms } = instance();
 
 scene.add(mesh);
 
+let progress = 0;
+
+uot(
+  p => {
+    progress = p;
+  },
+  3000,
+  Infinity
+);
+
 function animate() {
   requestAnimationFrame(animate);
-  uniforms.uProgress.value += uniforms.uProgress.value >= 1 ? -1 : 0.004;
+  uniforms.uProgress.value = progress;
   renderer.render(scene, camera);
 }
 
