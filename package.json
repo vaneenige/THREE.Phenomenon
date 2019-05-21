@@ -7,7 +7,10 @@
   "unpkg": "dist/three.phenomenon.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "http-server demo --silent & $npm_execpath run watch",
+    "start": "npm run copy && http-server demo --silent & $npm_execpath run watch",
+    "copy": "npm run copy:three && npm run copy:uot",
+    "copy:three": "cp node_modules/three/build/three.min.js demo/three.min.js",
+    "copy:uot": "cp node_modules/uot/dist/uot.umd.js demo/uot.umd.js",
     "watch": "microbundle watch --format umd --entry demo/src/index.js --output demo/dist/bundle.js",
     "build": "rm -rf dist && microbundle --name Phenomenon --format es,umd --sourcemap false",
     "prepare": "$npm_execpath run build"
@@ -40,6 +43,7 @@
     "microbundle": "^0.11.0"
   },
   "dependencies": {
-    "three": "^0.104.0"
+    "three": "^0.104.0",
+    "uot": "^1.3.0"
   }
 }
