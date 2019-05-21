@@ -1,13 +1,15 @@
 {
   "name": "three.phenomenon",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A tiny wrapper around three.js built for high-performance WebGL experiences.",
+  "source": "src/index.ts",
   "main": "dist/three.phenomenon.mjs",
   "unpkg": "dist/three.phenomenon.umd.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "http-server demo --silent & $npm_execpath run watch",
     "watch": "microbundle watch --format umd --entry demo/src/index.js --output demo/dist/bundle.js",
-    "build": "microbundle --name Phenomenon --format es,umd --sourcemap false",
+    "build": "rm -rf dist && microbundle --name Phenomenon --format es,umd --sourcemap false",
     "prepare": "$npm_execpath run build"
   },
   "repository": {
@@ -28,8 +30,16 @@
     "instances",
     "particles"
   ],
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "devDependencies": {
     "http-server": "^0.11.1",
     "microbundle": "^0.11.0"
+  },
+  "dependencies": {
+    "three": "^0.104.0"
   }
 }

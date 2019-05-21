@@ -5,6 +5,7 @@
 [![gzip size](http://img.badgesize.io/https://unpkg.com/three.phenomenon/dist/three.phenomenon.mjs?compression=gzip)](https://unpkg.com/three.phenomenon)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/vaneenige/three.phenomenon/blob/master/LICENSE)
 [![dependencies](https://img.shields.io/badge/dependencies-three.js-ff69b4.svg)](https://github.com/mrdoob/three.js/)
+[![TypeScript](https://img.shields.io/static/v1.svg?label=&message=TypeScript&color=294E80)](https://www.typescriptlang.org/)
 
 THREE.Phenomenon is a tiny wrapper around <a href="https://threejs.org/">three.js</a> built for high-performance WebGL experiences.
 
@@ -15,7 +16,7 @@ With it's simple API a mesh can be created that contains multiple instances of a
 - Custom instanced geometries
 - Attributes for every instance
 - Support for default materials
-- Compatible with three.js <a href="https://github.com/mrdoob/three.js/releases/tag/r102">r102</a>
+- Compatible with three.js <a href="https://github.com/mrdoob/three.js/releases/tag/r104">r104</a>
 
 ## Install
 ```

@@ -1,4 +1,4 @@
-import './../../src';
+import './../../dist/three.phenomenon';
 
 import base from './base';
 import instance from './instance';

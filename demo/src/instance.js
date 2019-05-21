@@ -114,16 +114,16 @@ function createInstance() {
     ['vec3 totalEmissiveRadiance = emissive;', 'vec3 totalEmissiveRadiance = vColor;'],
   ];
 
-  const instance = new THREE.Phenomenon({
+  const instance = new THREE.Phenomenon(
     geometry,
-    multiplier,
     material,
-    castShadow,
+    multiplier,
     attributes,
     uniforms,
     vertex,
-    fragment,
-  });
+    castShadow,
+    fragment
+  );
 
   return instance;
 }
